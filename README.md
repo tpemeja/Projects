@@ -1,5 +1,5 @@
 # Projects
-My academic projects :
+Some of my academic projects :
 
 - GPU : Optimization of the Game of Life by multi-threading and vectorization
 - Gomoku : AI players for a Gomoku tournament
