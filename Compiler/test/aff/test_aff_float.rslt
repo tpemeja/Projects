@@ -1,0 +1,5 @@
+float rf0, rf1, rf2;
+
+rf0 = (float)3;
+rf0 = 3.000000;
+rf0 = rf1;

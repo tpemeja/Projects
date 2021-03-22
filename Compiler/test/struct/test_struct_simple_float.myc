@@ -1,0 +1,3 @@
+struct nom1{
+  float a;
+};

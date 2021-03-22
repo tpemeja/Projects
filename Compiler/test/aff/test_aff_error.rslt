@@ -1,0 +1,3 @@
+int ri0;
+
+type error: in affection: expected INT but given FLOAT

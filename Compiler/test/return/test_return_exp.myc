@@ -1,0 +1,8 @@
+float a,b;
+int c,d;
+return a;
+return c;
+return a+b;
+return (a-b);
+return c+d;
+return (c*d);

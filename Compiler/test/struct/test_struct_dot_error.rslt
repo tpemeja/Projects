@@ -1,0 +1,6 @@
+struct name{
+	int a;
+};
+struct name* rs0;
+
+struct error: in dot affection: var is a pointer

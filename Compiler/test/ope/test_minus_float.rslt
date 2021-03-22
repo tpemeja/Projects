@@ -1,0 +1,16 @@
+float rf0, rf1, rf2;
+
+float rf3 = rf1 - rf2;
+rf0 = rf3;
+float rf4 = 3.000000 - 3.000000;
+rf0 = rf4;
+float rf5 = 3.000000 - rf1;
+rf0 = rf5;
+float rf6 = rf1 - 3.000000;
+rf0 = rf6;
+float rf7 = (float)3;
+float rf8 = rf7 - 3.000000;
+rf0 = rf8;
+float rf9 = (float)3;
+float rf10 = 3.000000 - rf9;
+rf0 = rf10;

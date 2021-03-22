@@ -1,0 +1,11 @@
+int a,b;
+float c;
+int main(){
+}
+int* test(int d){
+  return d+3;
+}
+int* e;
+a = 1;
+b = 3;
+c = b - a;

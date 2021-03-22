@@ -1,0 +1,1 @@
+Memory leaks are just a way for bytes to experience true freedom !

@@ -1,0 +1,5 @@
+struct name{int a;};
+
+struct name var;
+
+var.a = 3;

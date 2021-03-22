@@ -1,0 +1,8 @@
+struct nom{
+    int a;
+};
+
+struct nom var;
+var.a = 3;
+struct nom * var2;
+var2->a = 3;

@@ -1,0 +1,9 @@
+struct nom1{
+  float a;
+  float b;
+};
+struct nom2{
+  float a;
+  float b;
+  float c;
+};

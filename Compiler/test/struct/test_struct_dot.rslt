@@ -1,0 +1,6 @@
+struct name{
+	int a;
+};
+struct name rs0;
+
+rs0.a = 3;

@@ -1,0 +1,8 @@
+int test(int d){
+  d=2;
+  if(d!=1){
+    return d;
+  }else{
+    return d+3;
+  }
+}

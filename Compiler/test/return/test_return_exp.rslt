@@ -1,0 +1,13 @@
+float rf0, rf1;
+int ri0, ri1;
+
+return rf0;
+return ri0;
+float rf2 = rf0 + rf1;
+return rf2;
+float rf3 = rf0 - rf1;
+return rf3;
+int ri2 = ri0 + ri1;
+return ri2;
+int ri3 = ri0 * ri1;
+return ri3;

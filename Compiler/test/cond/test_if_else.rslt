@@ -1,0 +1,11 @@
+int ri0;
+
+if (! ri0  <  2) goto label0;
+
+
+
+ri0 = 2;
+goto label1;
+label0: 
+ri0 = 3;
+label1: ri0 = 4;

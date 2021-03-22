@@ -1,0 +1,10 @@
+int ri0, ri1, ri2;
+
+int ri3 = ri1 * ri2;
+ri0 = ri3;
+int ri4 = 3 * 3;
+ri0 = ri4;
+int ri5 = 3 * ri1;
+ri0 = ri5;
+int ri6 = ri1 * 3;
+ri0 = ri6;

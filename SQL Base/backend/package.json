@@ -1,0 +1,22 @@
+{
+  "name": "free-sgbd-coin-coin-backend",
+  "version": "1.0.0",
+  "description": "jeu de cartes de canards",
+  "main": "src/app.js",
+  "scripts": {
+    "serve": "node src/app.js",
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://tmatricon@thor.enseirb-matmeca.fr/git/free-sgbd-coin-coin"
+  },
+  "author": "mrosay001,tpemeja,tmatricon",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "cors": "^2.8.5"
+  }
+}

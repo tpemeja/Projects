@@ -1,0 +1,4 @@
+int ri0, ri1, ri2;
+
+ri0 = 3;
+ri0 = ri1;
