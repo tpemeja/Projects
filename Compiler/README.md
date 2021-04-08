@@ -1,4 +1,4 @@
-Ce qui a été implémenté dans ce projet:
+# Ce qui a été implémenté dans ce projet:
 - déclarations (int, float, struct, void, pointeurs)
 - opérateurs (+,-,*) mais pas entre pointeurs
 - affectations (int,float,struct)
@@ -8,20 +8,20 @@ Ce qui a été implémenté dans ce projet:
 - fonction (cf commentaires)
 
 Nous avons des tests unitaires, pour les lancer:
-$ ./test_script.sh [-d]
-    (le -d donne plus de détails sur les tests effectués)
+> ./test_script.sh [-d]
+(le -d donne plus de détails sur les tests effectués)
 
 Pour générer les fichiers .h et .c d'un fichier .myc:
-$ ./compil.sh [nom.myc]
+> ./compil.sh [nom.myc]
 
 Pour test le compilateur qui génère les .c et .h des .myc se trouvant dans
 le dossier test:
-$ ./compil_test.sh
+> ./compil_test.sh
 
 Pour des tests à la main sur le pseudo-compilateur:
-$ cd src/
-$ make
-$ ./lang
+> cd src/
+> make
+> ./lang
 
 ./lang ouvre l'interpréteur de code .myc.
 
