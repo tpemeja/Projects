@@ -14,7 +14,7 @@ To know the new state of each element, we need its current value and the value o
 We use 32x32 tiles which allow us to have the best optimization for parallelism. Indeed, when we distribute these tiles to the processors, they will have to load the data and a 32x32 tile performs a lot of calculations with few system calls to load the data.
 
 ### Thread speedup
-To distribute the work to the different processors, we use ``#pragma omp for`` from **OpenMP** before the for-loops that perform the computations for the different tiles to generate threads and distribute them to the processors.
+To distribute the work to the different processors, we use ```#pragma omp for``` from **OpenMP** before the for-loops that perform the computations for the different tiles to generate threads and distribute them to the processors.
 
 <p align="center">
   <img width="500" src=img/seq_vs_omp.PNG style="float:left;margin-left:-10px;">
@@ -27,6 +27,7 @@ The figure below shows the impact of the choice of scheduling on the speedup.
 <p align="center">
   <img width="700" src=img/omp_vs_seq_vs_stat_dyna.PNG>
 </p>
+
 As we can see from the figure, **dynamic scheduling is less efficient than static scheduling**. 
 Since the computation time is assumed to be the same for each element, dynamic scheduling will not have a better speed than static scheduling and will even need more time due to the higher number of cache miss.
 
@@ -37,7 +38,7 @@ For each element, the necessary computation is divided into two parts:
 * Set the new state
 
 ### State identification of the neighbors
-To compute all the states of the neighbors of a vector i, we just load the three vectors i-1, i and i+1.
+To compute all the states of the neighbors of a vector ```i```, we just load the three vectors ```i-1```, ```i``` and ```i+1```.
 If we add them, we get a vector composed of the states of the 3 rows for each column. 
 Adding this new vector with its left and right shift, we get the value of the states for the 30 elements in the middle of the vector.
 By completing with the values for the ends, we obtain the neighbor state vector for the 32 elements.
@@ -69,5 +70,6 @@ The implementation of **this improvement really shows its performance with large
 <p align="center">
   <img width="500" src=img/all_vs.PNG>
 </p>
+
 Based on all the improvements made, we were able to **speed up the calculations up to more than 150 times**. 
 Notice that the decrease in performance for the lazy vectorized and parallelized version is due to the lack of calculations to be performed.
