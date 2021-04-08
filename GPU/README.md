@@ -11,7 +11,7 @@ To achieve this optimization, we focus on two main parts:
 ### Data tiling
 The game is represented by a matrix where each element corresponds to a state. 
 To know the new state of each element, we need its current value and the value of all its neighbors. So instead of distributing the computation of each element to the different processors, we tile the matrix with tiles that group the elements geographically. 
-We use 32x32 tiles which allow us to have the best optimization for parallelism. Indeed, when we distribute these tiles to the processors, they will have to load the data and a 32x32 tile allows us to perform a lot of calculations with few system calls to load the data.
+We use 32x32 tiles which allow us to have the best optimization for parallelism. Indeed, when we distribute these tiles to the processors, they will have to load the data and a 32x32 tile performs a lot of calculations with few system calls to load the data.
 
 ### Thread speedup
 To distribute the work to the different processors, we use ``#pragma omp for`` from **OpenMP** before the for-loops that perform the computations for the different tiles, to generate threads and distribute them to the processors.
