@@ -1,4 +1,7 @@
-# Ce qui a été implémenté dans ce projet:
+# Création d'un compilateur 
+Projet réalisé en 2019 avec Maxime ROSAY
+
+## Ce qui a été implémenté dans ce projet:
 - déclarations (int, float, struct, void, pointeurs)
 - opérateurs (+,-,*) mais pas entre pointeurs
 - affectations (int,float,struct)
@@ -28,7 +31,7 @@ Pour des tests à la main sur le pseudo-compilateur:
 Pour plus de clarté, nous avons écrit des fonctions annexes se trouvant dans
 display.c majoritairement.
 
-# Commentaires:
+## Commentaires:
 - Ayant mal compris comment le compilateur devait traiter les structures,
   c'est à dire par exemple renvoyer:
     char var[8]; pour struct var{int x, int y};
@@ -50,7 +53,7 @@ display.c majoritairement.
   l'on sort de ces dernières afin de pouvoir les réutilisées.
 
 
-# Liste des choses non implémentées:
+## Liste des choses non implémentées:
 - Structures en code 3 adresses (implémenté en C ici)
 - Vérification de la correspondance du type de retour d'une fonction
 - Set de test pour les fonctions
