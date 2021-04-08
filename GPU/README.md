@@ -27,7 +27,7 @@ The figure below shows the impact of the choice of scheduling on the speedup.
 <p align="center">
   <img width="700" src=img/omp_vs_seq_vs_stat_dyna.PNG>
 </p>
-As we can see from the figure, dynamic scheduling is less efficient than static scheduling. 
+As we can see from the figure, **dynamic scheduling is less efficient than static scheduling**. 
 Since the computation time is assumed to be the same for each element, dynamic scheduling will not have a better speed than static scheduling and will even need more time due to the higher number of cache miss.
 
 ## Computation vectorization
@@ -52,3 +52,22 @@ Therefore, the following operation using a vector calculates the new states for 
 ```c
 new_vector = (neighbor_state_vector == 3 + old_vector) | (neighbor_state_vector == 3)
 ```
+
+## Lazy evaluation
+A lazy version has been implemented. In this version, **the computation of an element will not be performed if it remains the same for the following iteration**.
+To detect this, we put a boolean for each element to detect if the state has been changed. 
+If all the states needed to evaluate the new state of an element (this includes the element itself and all its neighbors) have not changed in the previous iteration, then the element will not change and there is no point in performing the calculation.
+The implementation of **this improvement really shows its performance with larger configurations with more work** as can be seen below.
+
+<p align="center">
+  <img width="700" src=img/comp.png>
+</p>
+
+*Note that the drop in performance observed after 24 threads is due to the switch from physical cores to virtual cores, given that the machine used for testing had 24 physical cores.*
+
+## Conclusion
+<p align="center">
+  <img width="500" src=img/all_vs.PNG>
+</p>
+Based on all the improvements made, we were able to **speed up the calculations up to more than 150 times**. 
+Notice that the decrease in performance for the lazy vectorized and parallelized version is due to the lack of calculations to be performed.
