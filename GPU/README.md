@@ -30,4 +30,25 @@ The figure below shows the impact of the choice of scheduling on the speedup.
 As we can see from the figure, dynamic scheduling is less efficient than static scheduling. 
 Since the computation time is assumed to be the same for each element, dynamic scheduling will not have a better speed than static scheduling and will even need more time due to the higher number of cache miss.
 
-## Calculation vectorization
+## Computation vectorization
+Using 256-bit vectors, we can vectorize 32 chars where each char corresponds to one element.
+For each element, the necessary computation is divided into two parts:
+* Identify the state of the element and its neighbors.
+* Set the new state
+
+### State identification of the neighbors
+To compute all the states of the neighbors of a vector i, we just load the three vectors i-1, i and i+1.
+If we add them, we get a vector composed of the states of the 3 rows for each column. 
+Adding this new vector with its left and right shift, we get the value of the states for the 30 elements in the middle of the vector.
+By completing with the values for the ends, we obtain the neighbor state vector for the 32 elements.
+The procedure is described in the following figure :
+<p align="center">
+  <img width="700" src=img/vectorization.png>
+</p>
+
+### New state calculation
+The operation calculating the new state for an element also works for a vector. 
+Therefore, the following operation using a vector calculates the new states for 32 elements at once:
+```c
+new_vector = (neighbor_state_vector == 3 + old_vector) | (neighbor_state_vector == 3)
+```
