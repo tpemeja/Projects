@@ -20,7 +20,7 @@ To distribute the work to the different processors, we use ```#pragma omp for```
   <img width="500" src=img/seq_vs_omp.PNG style="float:left;margin-left:-10px;">
 </p>
 
-As we can see on the figure above, the speedup is not proportional to the number of threads. Indeed, due to dependencies and the fact that not all processors run at the same speed, the global calculation can be slowed down compared to the theoretical value of processing these calculations in parallel.
+As we can see on the figure above, **the speedup is not proportional to the number of threads**. Indeed, due to dependencies and the fact that not all processors run at the same speed, the global calculation can be slowed down compared to the theoretical value of processing these calculations in parallel.
 
 ### Parallelism scheduling 
 The figure below shows the impact of the choice of scheduling on the speedup.
