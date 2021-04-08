@@ -1,6 +1,6 @@
 # Projects
 Some of my academic projects :
-
+- Compiler : Compiler to generate C code from a language specially created for this project and named "myC"
 - GPU : Optimization of the Game of Life by multi-threading and vectorization
 - Gomoku : AI players for a Gomoku tournament
 - IA : Design of an AI in machine learning able to play GO (basic rules)
