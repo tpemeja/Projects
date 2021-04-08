@@ -28,7 +28,7 @@ Pour des tests à la main sur le pseudo-compilateur:
 Pour plus de clarté, nous avons écrit des fonctions annexes se trouvant dans
 display.c majoritairement.
 
-Commentaires:
+# Commentaires:
 - Ayant mal compris comment le compilateur devait traiter les structures,
   c'est à dire par exemple renvoyer:
     char var[8]; pour struct var{int x, int y};
