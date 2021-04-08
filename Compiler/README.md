@@ -50,7 +50,7 @@ display.c majoritairement.
   l'on sort de ces dernières afin de pouvoir les réutilisées.
 
 
-Liste des choses non implémentées:
+# Liste des choses non implémentées:
 - Structures en code 3 adresses (implémenté en C ici)
 - Vérification de la correspondance du type de retour d'une fonction
 - Set de test pour les fonctions
