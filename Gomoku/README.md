@@ -8,16 +8,16 @@ This project is divided into three main parts:
 - Create players with different implementations and strategies
 
 ## Tree
-- /src : source folder
-  -  /src/players : contains all player code and their heuristic
-  - /src/server : contains server and bitboard
-  - /src/test : contains test files
-- /Makefile
-- /README.md
-- /build_Debug : folder for development, created by command make
-- /install : main installation folder, created by command make install
-- /doc/doxygen/ : all doxygen generated documentation
-- [Projet_s6_Gomoku.pdf](Projet_s6_Gomoku.pdf) : Project report (only in French)
+- *src* : source folder
+  -  *src/players* : contains all player code and their heuristic
+  - *src/server* : contains server and bitboard
+  - *src/test* : contains test files
+- *Makefile*
+- *README.md*
+- *build_Debug* : folder for development, created by command make
+- *install* : main installation folder, created by command make install
+- *doc/doxygen/* : all doxygen generated documentation
+- [*Projet_s6_Gomoku.pdf*](Projet_s6_Gomoku.pdf) : Project report (only in French)
 
 ## Pre-requesties :
 - C compiler
