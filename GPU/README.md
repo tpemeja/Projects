@@ -5,9 +5,10 @@ Project realized in 2020 with Maxime ROSAY.
 
 ## Project description
 The goal of this project is to optimize the game of life already implemented in [EasyPAP](https://gforgeron.gitlab.io/easypap/#documentation) and which can be seen in [life_vec.c](life_vec.c).
-To achieve this optimization, we focus on two main parts:
+To achieve this optimization, we focus on three main parts:
 - Use parralism to distribute computations with OpenMP
 - Accelerate calculations with vectorization
+- Avoid unnecessary calculations
 
 ## Parallelism of work
 ### Data tiling
