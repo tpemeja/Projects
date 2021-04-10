@@ -14,7 +14,7 @@ The project was divided into two main parts:
 ## Tracker
 This tracker has been realized in C with Maxime ROSAY.
 
-In [tracker](src/tracker) directory :
+#### In [tracker](src/tracker) directory :
 
 ``` make ```  : compile the tracker
 
@@ -23,7 +23,7 @@ In [tracker](src/tracker) directory :
 ## Peer
 The peers have been realized in Java by Otavio FLORES JACOBI, Abdelouahab LAAROUSSI, Julien MIENS.
 
-In [peer](src/peer) directory :
+#### In [peer](src/peer) directory :
 
 ``` make ```  : compile the peer files
 
