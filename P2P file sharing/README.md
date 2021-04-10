@@ -23,13 +23,10 @@ This tracker has been realized in C with Maxime ROSAY.
 ## Peer
 The peers have been realized in Java by Otavio FLORES JACOBI, Abdelouahab LAAROUSSI, Julien MIENS.
 
+Default configuration defined in [config.ini](src/peer/config.ini) runs the peer with a tracker set to ```127.0.0.1:8090```.
+
 #### In [peer](src/peer) directory :
 
 ``` make ```  : compile the peer files
-
-By default configuration defined in [config.ini](src/peer/config.ini), the peer run with a tracker defined on ```127.0.0.1:8090```.
-
-
-``` ./tracker -v -p 8090 ``` : run the tracker on port 8090 ( specified by ```-p``` ) with logs ( ```-v``` )
 
 ```make run1``` and ```make run2``` run two peers with different files and IP addresses.
