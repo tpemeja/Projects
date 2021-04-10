@@ -1,0 +1,27 @@
+digraph "player"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="player",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Heuristic with 2 matrix (one for the player and the other one for the\\ opponent) which computes all p..."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" actual_board\ndanger\nopportunity" ,fontname="Helvetica"];
+  Node2 [label="matrix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmatrix.html",tooltip="Implementation of the strenghs of all positions for a given board. At a moment T during the game,..."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" board" ,fontname="Helvetica"];
+  Node3 [label="board",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structboard.html",tooltip="Representation a the Gomoku board where each position of the n*n board represents a game position or ..."];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" h" ,fontname="Helvetica"];
+  Node4 [label="heuristic",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structheuristic.html",tooltip="Player that will play on a board by giving successive moves to the server."];
+  Node2 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" danger\nopportunity" ,fontname="Helvetica"];
+  Node3 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" board" ,fontname="Helvetica"];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" stack" ,fontname="Helvetica"];
+  Node5 [label="move_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmove__t.html",tooltip="Describe a position on a board."];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" tree" ,fontname="Helvetica"];
+  Node6 [label="tree",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structtree.html",tooltip=" "];
+  Node3 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" tmp" ,fontname="Helvetica"];
+  Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" root" ,fontname="Helvetica"];
+  Node7 [label="node",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structnode.html",tooltip=" "];
+  Node7 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" childs\nfather" ,fontname="Helvetica"];
+  Node5 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mv" ,fontname="Helvetica"];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" a_m" ,fontname="Helvetica"];
+  Node8 [label="allowed_moves",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structallowed__moves.html",tooltip="Table of moves allowed in the board. Its size changes through the game."];
+  Node5 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" move" ,fontname="Helvetica"];
+}

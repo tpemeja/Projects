@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['finalize_55',['finalize',['../structplayer__t.html#ad5261d28285dbe1897a5a595a87a9bfd',1,'player_t::finalize()'],['../players_2player_8h.html#a32d626626eee0bc4ade146973f6abb1c',1,'finalize():&#160;player1.c'],['../player1_8c.html#a32d626626eee0bc4ade146973f6abb1c',1,'finalize():&#160;player1.c'],['../player2_8c.html#a32d626626eee0bc4ade146973f6abb1c',1,'finalize():&#160;player2.c'],['../player3_8c.html#a32d626626eee0bc4ade146973f6abb1c',1,'finalize():&#160;player3.c'],['../player4_82_8c.html#a32d626626eee0bc4ade146973f6abb1c',1,'finalize():&#160;player4.2.c'],['../player4_83_8c.html#a32d626626eee0bc4ade146973f6abb1c',1,'finalize():&#160;player4.3.c'],['../player4_8c.html#a32d626626eee0bc4ade146973f6abb1c',1,'finalize():&#160;player4.c'],['../player5_8c.html#a32d626626eee0bc4ade146973f6abb1c',1,'finalize():&#160;player5.c'],['../player__test_8c.html#a32d626626eee0bc4ade146973f6abb1c',1,'finalize():&#160;player_test.c'],['../server_2player_8h.html#a32d626626eee0bc4ade146973f6abb1c',1,'finalize():&#160;player1.c']]],
+  ['free_5fall_56',['free_all',['../server_8c.html#abb93ae96c3611216aabc251bf815f603',1,'server.c']]]
+];
