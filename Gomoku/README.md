@@ -3,9 +3,9 @@ Project realized in 2019 with Emeric Duchemin, Laurent Genty, Julien Miens
 
 ## Project description
 This project is divided into three main parts:
-- Build a [bitboard](https://en.wikipedia.org/wiki/Bitboard) and all the operations needed to play Gomoku.
+- Build a [bitboard](https://en.wikipedia.org/wiki/Bitboard) and all the operations needed to play Gomoku
 - Implement a server making two players play the game
-- Create players
+- Create players with different implementations and strategies
 
 ## Tree
 - /src : source folder
@@ -48,9 +48,9 @@ Player B will play first
 
 ## Documentation :
 
-- ```make doc``` : generate all doxygen documentation
+- ```make doc``` : generate all doxygen documentation and run `doc/doxygen/index.html` on your browser to see it
 
-Run `doc/doxygen/index.html` on your browser in order to see it
+Or run directly `doc/doxygen/html/index.html`[doc/doxygen/html/index.html] after cloning the repository to see the documentation
 
 ## Cleaning :
 
