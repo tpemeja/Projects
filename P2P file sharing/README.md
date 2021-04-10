@@ -12,7 +12,7 @@ The project was divided into two main parts:
 - Peers communicating first with the tracker, and then with other peers
 
 ## Tracker
-This tracker has been realized in C with Maxime ROSAY.
+This tracker has been realized in **C** with Maxime ROSAY.
 
 #### In [tracker](src/tracker) directory :
 
@@ -21,7 +21,7 @@ This tracker has been realized in C with Maxime ROSAY.
 ``` ./tracker -v -p 8090 ``` : run the tracker on port 8090 ( specified by ```-p``` ) with logs ( ```-v``` )
 
 ## Peer
-The peers have been realized in Java by Otavio FLORES JACOBI, Abdelouahab LAAROUSSI, Julien MIENS.
+The peers have been realized in **Java** by Otavio FLORES JACOBI, Abdelouahab LAAROUSSI, Julien MIENS.
 
 Default configuration defined in [config.ini](src/peer/config.ini) runs the peer with a tracker set to ```127.0.0.1:8090```.
 
