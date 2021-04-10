@@ -50,7 +50,7 @@ Player B will play first
 
 - ```make doc``` : generate all doxygen documentation
 
-Run [doc/doxygen/index.html](doc/doxygen/index.html) on your browser in order to see it
+Run `doc/doxygen/index.html` on your browser in order to see it
 
 ## Cleaning :
 
