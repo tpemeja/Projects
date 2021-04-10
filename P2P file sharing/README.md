@@ -1,4 +1,4 @@
-#P2P file sharing
+# P2P file sharing
 Project realized in 2020 with Otavio FLORES JACOBI, Abdelouahab LAAROUSSI, Julien MIENS, Maxime ROSAY.
 
 [Rapport_RE203.pdf](Rapport_RE203.pdf) is a French report of this project, describing more precisely the work done and explained below.
