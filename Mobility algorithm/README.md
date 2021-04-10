@@ -11,4 +11,4 @@ The goal of this project is to reproduce the behavior of a ant colony described 
 
 The project was divided into two main parts:
 - Setup of the ant colony and the environment
-- Improve the behavior of the ants to survive longer by using pheromones
+- Improve the behavior of the ants to survive longer by using pheromones in [AntNode.java](jbotsim-ants-ennonce/src/main/java/ants/actors/AntNode.java)
