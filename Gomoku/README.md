@@ -50,7 +50,7 @@ Player B will play first
 
 - ```make doc``` : generate all doxygen documentation and run `doc/doxygen/index.html` on your browser to see it
 
-Or run directly `doc/doxygen/html/index.html`[doc/doxygen/html/index.html] after cloning the repository to see the documentation
+Or run directly `doc/doxygen/html/index.html` after cloning the repository to see the documentation
 
 ## Cleaning :
 
