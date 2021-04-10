@@ -27,15 +27,15 @@ This project is divided into three main parts:
 
 ## Compilation :
 
-- ```make``` : to compile in the build_Debug folder
-- ```make install``` : to transfer all executable files into install folder, will call command make if files are not created
+- ```make``` : compile in *build_Debug* folder
+- ```make install``` :  transfer all executable files to the *install* folder (call ```make``` if files are not created)
 
 Each player may be compiled separately :
-- ```make build_Debug/playerN.so``` : to compile playerN
+- ```make build_Debug/playerN.so``` : compile playerN
 
 ## Execution :
 
-Go in install folder
+Go in *install* folder
 ```./server -n 10 -o playerA.so playerB.so```
 where -n is used to give the size of the board
 and -o pass the game in swap mode (with opening proposal)
@@ -43,8 +43,8 @@ Player B will play first
 
 ## Test :
 
-- ```make test``` : computes global tests
-- ```make test full=ON``` : computes results for all test
+- ```make test``` : compute global tests
+- ```make test full=ON``` : compute results for all test
 
 ## Documentation :
 
@@ -54,11 +54,4 @@ Or run directly `doc/doxygen/html/index.html` after cloning the repository to se
 
 ## Cleaning :
 
-- ```make clean``` : clean the repository, make install and documentation
-
-## Acknowledgments :
-Special thanks to F. Herbreteau
-
-### AI algorithms :
-Mainly made by [Julien Miens](https://github.com/Arkhean)
-
+- ```make clean``` : clean the repository
