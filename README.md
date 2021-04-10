@@ -1,9 +1,10 @@
 # Projects
 Some of my academic projects :
 - **C projects** :
-  - [Compiler](Compiler) : Compiler to generate C code from a language specially created for this project and named "myC"
+  - [Compiler](Compiler) : Compiler generating C code from a language specially created for this project and named "myC"
   - [GPU](GPU) : Life Game Optimization by multi-threading and vectorization
-  - [Gomoku](Gomoku) : Implementation of Gomoku game and creation of AI players for a tournament
+  - [Gomoku](Gomoku) : Gomoku game implementation and AI players creation for a tournament
+  - [P2P file sharing](P2P%20file%20sharing) : Peer-to-peer file sharing systems with tracker
 - **Java projects** :
   - [Mobility algorithm](Mobility%20algorithm) : Simulation of an ant colony and optimization of the ants' behavior
 
