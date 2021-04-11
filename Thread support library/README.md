@@ -47,5 +47,5 @@ By default, the mode is defined on the thread library. And the result is stored 
 - ```make graphs``` : compile and create graphs for all tests using the thread and pthread libraries
 
 - ```make [Test name]-graph [MODE1=-pthread] [MODE2=] [MODE3=] [MODE4=]``` : compile and create a test graph for a range of modes from 1 to 4
-- 
+
 By default, the modes are defined on the thread and pthread libraries. If two modes are identical then the mode will only appear once in the graph.
