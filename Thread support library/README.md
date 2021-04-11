@@ -24,7 +24,7 @@ The different modes available are as follows:
 - **-pthread** : pthread library
 - **-premp** : thread library with preemption
 - **-head** : thread library with thread insertion from the head of the queue
-- 
+
 ##  Test
 - ```make check``` :  compile and run all tests with the thread library and pthread
 
