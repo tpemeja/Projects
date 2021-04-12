@@ -13,6 +13,8 @@ Some of my academic projects :
 - **MySQL/JavaScript project** :
   - [SQL Base](SQL%20Base) : Creation of a database with a web interface
 
-- IA : Design of an AI in machine learning able to play GO (basic rules)
+- **Python project** :
+  - [IA](IA) : Go player based on a neural network
+  
 - Machine_Learning : Basic Machine Learning projects in Python
 
