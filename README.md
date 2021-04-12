@@ -17,4 +17,5 @@ Some of my academic projects :
   - [IA](IA) : Go player based on a neural network
   
 - Machine_Learning : Basic Machine Learning projects in Python
+- Puissance 4
 
