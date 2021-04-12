@@ -14,7 +14,7 @@ Some of my academic projects :
   - [SQL Base](SQL%20Base) : Creation of a database with a web interface
 
 - **Python project** :
-  - [IA](IA) : Go player based on a neural network
+  - [IA](IA) : Go player based on Neural Network
   
 - Machine_Learning : Basic Machine Learning projects in Python
 - Puissance 4
