@@ -13,8 +13,6 @@ Vous pouvez utiliser cette feuille pour visualiser un match.
 Pour charger vos joueurs, il faut changer leurs noms dans 'classNames' (ligne 13)
 """
 
-''' Sorry no comments :).
-'''
 import Puissance_4
 import importlib
 import time
@@ -95,8 +93,7 @@ while not b.is_game_over():
 
 print("Referee Board:")
 clear_output(wait=True)
-#display(HTML(b.svg()))
-display(HTML(b.svg2()))
+display(HTML(b.svg()))
 print("The game is over")
 b.board_to_text(b._board)
 result = b.result()

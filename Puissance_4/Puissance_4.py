@@ -1,3 +1,7 @@
+'''
+Based on the code of the Goban implementation by Laurent SIMON 
+'''
+
 import numpy as np
 #RED plays first
 class Board:
@@ -211,8 +215,6 @@ class Board:
         circle_width = 16
         border = 20
         width = 40
-        hmax = str(width*(nb_cells_width-1) + border)
-        wmax = str(width*(nb_cells_height-1) + border)
 
         board ='<svg height="'+str(text_width+border*2+(nb_cells_height-1)*width)+'" '+\
         ' width="'+str(text_width+border*2+(nb_cells_width-1)*width)+'" > '
@@ -224,7 +226,6 @@ class Board:
         for i in range(border+text_width-5, text_width-5+border+nb_cells_width*width, width):
             board+= '<text x="'+str(i)+'" y="18" font-size="24" font-color="RED">'+letters[il]+'</text>'
             il += 1
-            #board += '<rect x=0 y=0 width=20 height=10 stroke="RED" />'
         board += '</svg>'
 
         # The line numbers
@@ -233,72 +234,10 @@ class Board:
         for i in range(border+text_width+7, text_width+7+border+(nb_cells_width-1)*width, width):
             board+= '<text y="'+str(i)+'" x="0" font-size="24" font-color="RED">'+str(6-il)+'</text>'
             il += 1
-            #board += '<rect x=0 y=0 width=20 height=10 stroke="RED" />'
         board += '</svg>'
 
 
-        # The board by itself (avant #B4927A)
-        board += ' <svg x="'+str(text_width)+'" y="'+str(text_width)+'" height="' + \
-        str(text_width+width*(nb_cells_height-1) + 2*border) + '" width="' + \
-        str(text_width+width*(nb_cells_width-1) + 2*border) + '" > ' + \
-        '<rect x="0" y="0" width="'+str(width*(nb_cells_width-1)+2*border)+'" height="' + str(width*(nb_cells_height-1)+ 2*border) + '" fill="#dac7ba" />\
-        <line x1="'+str(border)+'" y1="'+str(border)+'" x2="'+str(border)+'" y2="'+ wmax +'" stroke-width="4" stroke="RED"/>\
-        <line x1="' + hmax + '" y1="' + str(border) + '" x2="' + str(border) + '" y2="' + str(border) + '" stroke-width="4" stroke="RED"/>\
-        <line x1="' + hmax + '" y1="' + wmax + '" x2="' + hmax + '" y2="' + str(border) + '" stroke-width="4" stroke="RED"/>\
-        <line x1="' + str(border) + '" y1="' + wmax + '" x2="' + hmax + '" y2="' + wmax + '" stroke-width="4" stroke="RED"/>'
-
-        for i in range(border+width, width*(nb_cells_width-2)+2*border, width):
-            board += '<line x1="'+str(i)+'" y1="'+str(border)+'" x2="'+str(i)+'" y2="' + wmax + '" stroke-width="2" stroke="#3a312a"/>'
-            board += '<line y1="'+str(i)+'" x1="'+str(border)+'" y2="'+str(i)+'" x2="' + hmax + '" stroke-width="2" stroke="#3a312a"/>'
-
-
-        # The stones
-
-        pieces = [(x,self._BOARDSIZE[0]-y,self._board[y,x]) for x in range(self._BOARDSIZE[1]) for y in range(self._BOARDSIZE[0]) if
-                self._board[y,x] != Board._EMPTY]
-        for (x,y,c) in pieces:
-            board += '<circle cx="'+str(border+width*x) + \
-                '" cy="'+str(border+width*(nb_cells_width-y-1))+'" r="' + str(circle_width) + \
-                '" stroke="#333333" stroke-width="3" fill="' + \
-                ("RED" if c==1 else "YELLOW") +'" />'
-
-        board += '</svg></svg>'
-        #'\    <text x="100" y="100" font-size="30" font-color="RED"> Hello </text>\
-        return board
-
-    def svg2(self):
-
-        text_width=20
-        nb_cells_height = self._BOARDSIZE[0]
-        nb_cells_width  = self._BOARDSIZE[1]
-        circle_width = 16
-        border = 20
-        width = 40
-
-        board ='<svg height="'+str(text_width+border*2+(nb_cells_height-1)*width)+'" '+\
-        ' width="'+str(text_width+border*2+(nb_cells_width-1)*width)+'" > '
-
-        # The ABCD... line
-        board += '<svg height="'+str(text_width)+'" width="' + str(text_width + border*2+(nb_cells_width-1)*width)+'">'
-        letters = "ABCDEFG"
-        il = 0
-        for i in range(border+text_width-5, text_width-5+border+nb_cells_width*width, width):
-            board+= '<text x="'+str(i)+'" y="18" font-size="24" font-color="RED">'+letters[il]+'</text>'
-            il += 1
-            #board += '<rect x=0 y=0 width=20 height=10 stroke="RED" />'
-        board += '</svg>'
-
-        # The line numbers
-        il = 0
-        board += '<svg width="'+str(text_width)+'" height="' + str(text_width + border*2+(nb_cells_width-1)*width)+'">'
-        for i in range(border+text_width+7, text_width+7+border+(nb_cells_width-1)*width, width):
-            board+= '<text y="'+str(i)+'" x="0" font-size="24" font-color="RED">'+str(6-il)+'</text>'
-            il += 1
-            #board += '<rect x=0 y=0 width=20 height=10 stroke="RED" />'
-        board += '</svg>'
-
-
-        # The board by itself (avant #B4927A)
+        # The board by itself 
         board += ' <svg x="'+str(text_width)+'" y="'+str(text_width)+'" height="' + \
         str(text_width+width*(nb_cells_height-1) + 2*border) + '" width="' + \
         str(text_width+width*(nb_cells_width-1) + 2*border) + '" > ' + \
@@ -312,7 +251,6 @@ class Board:
                 "WHITE" +'" />'
 
         # The stones
-
         pieces = [(x,self._BOARDSIZE[0]-y,self._board[y,x]) for x in range(self._BOARDSIZE[1]) for y in range(self._BOARDSIZE[0]) if
                 self._board[y,x] != Board._EMPTY]
         for (x,y,c) in pieces:
@@ -322,5 +260,4 @@ class Board:
                 ("red" if c==1 else "yellow") +'" />'
 
         board += '</svg></svg>'
-        #'\    <text x="100" y="100" font-size="30" font-color="RED"> Hello </text>\
         return board

@@ -1,18 +1,10 @@
 # -*- coding: utf-8 -*-
-''' This is the famous random player whici (almost) always looses.
-'''
-
 import time
 import Puissance_4
 from random import choice
 from playerInterface import *
 
 class myPlayer(PlayerInterface):
-    ''' Example of a random player for the go. The only tricky part is to be able to handle
-    the internal representation of moves given by legal_moves() and used by push() and
-    to translate them to the GO-move strings "A1", ..., "J8", "PASS". Easy!
-
-    '''
 
     def __init__(self):
         self._board = Puissance_4.Board()
