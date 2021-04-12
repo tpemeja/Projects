@@ -17,7 +17,7 @@ Using symmetries, a board can be associated to 8 boards with the same win rate. 
 
 ## Player
 
-Each player has only 5 minutes for the entire game. This time limit makes it difficult to explore the possibility tree. This is why we did not implement an Alpha-beta pruning but only a Min-Max and we focused on improving the prediction of the neural network. The player is implemented in [myPlayer.py](IA/GO/myPlayer.py) and uses the neural network model saved in [myplayer_model.h5](IA/GO/myplayer_model.h5).
+Each player has only 5 minutes for the entire game. This time limit makes it difficult to explore the possibility tree. This is why we did not implement an Alpha-beta pruning but only a Min-Max and we focused on improving the prediction of the neural network. The player is implemented in [myPlayer.py](GO/myPlayer.py) and uses the neural network model saved in [myplayer_model.h5](GO/myplayer_model.h5).
 
 The exploration of possibilities depends on the time left to the player. 
 - Less than 4 minutes : *Minimize the opponent's win rate*
