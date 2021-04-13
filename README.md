@@ -15,8 +15,9 @@ Some of my academic projects :
 
 - **Python project** :
   - [IA](IA) : Go player based on Neural Network
+  - [Machine_Learning](Machine_Learning) : Basic Machine Learning algorithms
   - [Puissance_4](Puissance_4) : Personal project reproducing the [IA](IA) project for the Connect Four game
   
-- Machine_Learning : Basic Machine Learning projects in Python
+
 
 
