@@ -1,59 +1,63 @@
-# Création d'un compilateur 
-Projet réalisé en 2019 avec Maxime ROSAY
+# Compiler creation 
+Project realized in 2019 with Maxime ROSAY
 
-## Ce qui a été implémenté dans ce projet:
-- déclarations (int, float, struct, void, pointeurs)
-- opérateurs (+,-,*) mais pas entre pointeurs
-- affectations (int,float,struct)
-- conditionnels (if, if else, while)
-- structures (déclaration, affectation) (finalement pas vraiment, cf commentaires)
-- return (pas de contrôle par rapport à la sortie de la fonction)
-- fonction (cf commentaires)
+## Project description
+In this project, we created compiler generating C code from a language specially created for this project and named "myC"
 
-Nous avons des tests unitaires, pour les lancer:
-> ./test_script.sh [-d]
-(le -d donne plus de détails sur les tests effectués)
+The complier supports the following actions :
+- declarations (int, float, struct, void, pointeurs)
+- operators (+,-,*) but not between pointers
+- assignments (int,float,struct)
+- conditionals (if, if else, while)
+- structures (declaration, assignment) (well not really, see comments)
+- return (no control over the output of the function)
+- function (cf commentaires)
 
-Pour générer les fichiers .h et .c d'un fichier .myc:
-> ./compil.sh [nom.myc]
+## Compile .myc file
 
-Pour test le compilateur qui génère les .c et .h des .myc se trouvant dans
-le dossier test:
-> ./compil_test.sh
+To generate .h and .c files from a .myc file:
 
-Pour des tests à la main sur le pseudo-compilateur:
-> cd src/
-> make
-> ./lang
+```./compil.sh [nom.myc]```
 
-./lang ouvre l'interpréteur de code .myc.
+## Test
 
-Pour plus de clarté, nous avons écrit des fonctions annexes se trouvant dans
-display.c majoritairement.
+We have unit tests, to run them:
 
-## Commentaires:
-- Ayant mal compris comment le compilateur devait traiter les structures,
-  c'est à dire par exemple renvoyer:
-    char var[8]; pour struct var{int x, int y};
-  Nous renvoyons la même structure qu'en C, ce qui est opposé à ce qu'il
-  fallait faire
-- Pour affecter une valeur à un attribut d'une structure, la grammaire ne
-  semble pas le permettre.
-  Pour cela nous avons ajouter la règle ligne 322 (exp ARR ID EQ exp) pour
-  réaliser les affectations du genre:
-    variable->attribut = qq chose;
-  Mais cette dernière génère des warnings: 13 shift/reduce conflicts, dont
-  on ne sait résoudre
-  Actuellement, le code compile et fonctionne avec, cela ne semble pas être
-  un problème, mais nous le spécifions quand même.
-- L'affectation des champs d'une structure doit respecter strictement l'égalité
-  des types (c'est seulement pour la structure, le cast explicite étant
-  implémenté pour le reste)
-- Les attributs locales définies dans les fonctions ne sont pas libérés lorsque
-  l'on sort de ces dernières afin de pouvoir les réutilisées.
+```./test_script.sh [-d]```
+(-d gives more details about the tests performed)
+
+To test the compiler that generates the .c and .h of the .myc in the ```test``` folder :
+```./compil_test.sh```
+
+For hand tests on the pseudo-compiler:
+```
+cd src/
+make
+./lang
+```
+
+```./lang``` opens the ```.myc``` code interpreter.
+
+For more clarity, we have written some auxiliary functions that are mostly found in ```display.c```.
+
+## Comments:
+- Having misunderstood how the compiler should handle structures, i.e. for example ```return char var[8]``` for ```struct var{int x, int y}```
+  We return the same structure as in C, which is the opposite of what we were supposed to do.
+ 
+- The grammar does not seem to allow assigning a value to an attribute of a structure.
+  For this we have added the rule line 322 ```exp ARR ID EQ exp``` to realize assignments of the type:
+  
+    ```variable->attribute = sth```
+    
+  But the rule generates warnings, 13 shift/reduce conflicts, which we do not know how to solve.
+  The code compiles and works with it now, so it doesn't seem to be a problem, but we specify it anyway.
+
+- The assignment of the fields of a structure must strictly respect the equality of types (this is only for the structure, the explicit cast is implemented for the rest)
+
+- The local attributes defined in the functions are not freed when we exit the functions in order to reuse them later.
 
 
-## Liste des choses non implémentées:
-- Structures en code 3 adresses (implémenté en C ici)
-- Vérification de la correspondance du type de retour d'une fonction
-- Set de test pour les fonctions
+## Lists of things not implemented:
+- Structures in [Three-address code](https://en.wikipedia.org/wiki/Three-address_code) (implemented in C here)
+- Check the return type of a function
+- Test set for functions
