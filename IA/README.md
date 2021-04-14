@@ -28,6 +28,6 @@ The exploration of possibilities depends on the time left to the player.
 To improve our player, here are some possibilities:
 - **Generate more data to train the neural network** indeed we realized at the end that the data provided with our project was not valid with the defined Go rules
 - **Improve the network by modifying the hyperparameters** to increase the prediction accuracy and/or to make it faster in order to go deeper into the decision tree
-- **Try other types of neural networks** like the [CNN](https://en.wikipedia.org/wiki/Convolutional_neural_network)
+- **Try other types of neural networks** like [CNN](https://en.wikipedia.org/wiki/Convolutional_neural_network)
 - **Use more complex search algorithms** such as [Alpha-beta pruning](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning) or [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search)
 - **Develop more complex strategies** based on the time left to the player
