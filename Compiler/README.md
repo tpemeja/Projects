@@ -5,17 +5,17 @@ Project realized in 2019 with Maxime ROSAY
 In this project, we created compiler generating C code from a language specially created for this project and named "myC"
 
 The complier supports the following actions :
-- declarations (int, float, struct, void, pointeurs)
-- operators (+,-,*) but not between pointers
-- assignments (int,float,struct)
-- conditionals (if, if else, while)
-- structures (declaration, assignment) (well not really, see comments)
-- return (no control over the output of the function)
-- function (cf commentaires)
+- **declarations** (```int```, ```float```, ```struct```, ```void```, ```pointers```)
+- **operators** (```+```,```-```,```*```) but not between pointers
+- **assignments** (```int```,```float```,```struct```)
+- **conditionals** (```if```, ```if else```, ```while```)
+- **structures** (declaration, assignment) (well not really, see comments)
+- **return** (no control over the output of the function)
+- **function** (cf commentaires)
 
 ## Compile .myc file
 
-To generate .h and .c files from a .myc file:
+To generate ```.h``` and ```.c``` files from a ```.myc``` file:
 
 ```./compil.sh [nom.myc]```
 
@@ -24,7 +24,7 @@ To generate .h and .c files from a .myc file:
 We have unit tests, to run them:
 
 ```./test_script.sh [-d]```
-(-d gives more details about the tests performed)
+(```-d``` gives more details about the tests performed)
 
 To test the compiler that generates the .c and .h of the .myc in the ```test``` folder :
 ```./compil_test.sh```
