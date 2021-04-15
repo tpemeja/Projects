@@ -2,7 +2,7 @@
 Project realized in 2019 with Maxime ROSAY
 
 ## Project description
-In this project, we created compiler generating C code from a language specially created for this project and named "myC"
+In this project, we created a compiler generating C code from a language specially created for this project and named "myC"
 
 The complier supports the following actions :
 - **declarations** (```int```, ```float```, ```struct```, ```void```, ```pointers```)
