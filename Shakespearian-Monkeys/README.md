@@ -1,11 +1,10 @@
 # Shakespearian Monkeys
 Project realized in 2018 with Corentin Le Métayer
 
-First project realized which explains the different problems of code, organization and architecture of the project.
-
 [rapport.pdf](rapport.pdf) is a French report of this project describing more precisely the work done and explained below.
 More information about the project is also available on [Shakespearian Monkeys](https://www.labri.fr/perso/renault/working/teaching/projets/2018-19-S5-ShakeMonkeys.php) (in French)
 
+*First project realized which explains the different problems of code, organization and architecture of the project.*
 ## Project description
 This random text generator based on the [Infinite monkey theorem](https://en.wikipedia.org/wiki/Infinite_monkey_theorem) is divided into two main parts:
 - [Base](Projet/Base) : Build a program using randomly one of the three functions that respectively ```Read the text word by word```, ```Update the number of occurrences of the word in the text```, ```Print the word```
