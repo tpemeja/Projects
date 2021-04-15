@@ -1,7 +1,7 @@
 # Custom thread library
 Project realized in 2020 with Sonia OUEDRAOGO, Julien MIRANDE.
 
-[Projet_OS.pdf.pdf](Projet_OS.pdf.pdf) is a French report of this project, describing more precisely the work done and explained below.
+[Projet_OS.pdf.pdf](Projet_OS.pdf.pdf) is a French report of this project describing more precisely the work done and explained below.
 
 ## Project description
 In this project, we designed our own thread library called **thread** in [thread.c](https://github.com/tpemeja/Projects/blob/main/Thread%20support%20library/src/thread/thread.c) which reproduces the behavior of [pthread](https://pubs.opengroup.org/onlinepubs/7908799/xsh/pthread.h.html).
