@@ -1,7 +1,7 @@
 # [Life Game](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) Optimization
 Project realized in 2020 with Maxime ROSAY.
 
-[Rapport_GPU_IT224.pdf](Rapport_GPU_IT224.pdf) is a French report of this project, describing more precisely the work done and explained below.
+[rapport.pdf](rapport.pdf) is a French report of this project describing more precisely the work done and explained below.
 
 ## Project description
 The goal of this project is to optimize the game of life already implemented in [EasyPAP](https://gforgeron.gitlab.io/easypap/#documentation) and which can be seen in [life_vec.c](life_vec.c).
