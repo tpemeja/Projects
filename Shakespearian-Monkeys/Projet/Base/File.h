@@ -11,7 +11,6 @@ void ajout_file(struct mot* mot, struct file* file); //Ajoute un nouveau mot à 
 
 void ajout_file_cell(struct pool* pool,struct cell* cell, struct file_cell* file_cell); //Ajoute une nouvelle cellule à la file et lie la cellule d'avant à celle-ci
 
-
 //file ne dois pas être vide et déjà vu par le stat
 void supp_file(struct file* file); //Supprime le dernier élément de la file et enlève le pointeur du dernier
 
