@@ -3,7 +3,6 @@
 #define MAX_MOTS 38000 
 #define MAX_SUCC 38000
 
-
 struct suivant { //Créer un doublé contenant un mot et son successeur
   char mot[MAX_WORD_LENGTH+1];
   char next[MAX_WORD_LENGTH+1];
