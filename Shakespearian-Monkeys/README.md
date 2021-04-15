@@ -16,9 +16,9 @@ This random text generator based on the [Infinite monkey theorem](https://en.wik
 
 - ```make``` : compile the basic version
 
-- ```./project text_file.txt <-s seed_number>``` : Run the basic version on the ```test_file.txt``` file, we can specify a seed with ```-s seed_number``` to change the random selection of functions. 
+- ```./project text_file.txt <-s seed_number>``` : Run the basic version on the ```test_file.txt``` file, we can specify a seed with ```-s seed_number``` to change the random selection of functions
 
-The basic version prints the text and its statistics, such as the ```number of words```, ```number of different words```, ```highest and lowest occurrences```
+The basic version prints the text and its statistics, such as the ```number of words```, ```number of different words```, ```highest and lowest occurrences```.
 
 - ```make test``` : compute tests for the basic version
 
