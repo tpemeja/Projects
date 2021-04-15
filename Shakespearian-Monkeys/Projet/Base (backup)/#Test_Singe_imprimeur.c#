@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+#include "File.h"
+#include "r_file.h"
+#include "Singe_tests.h"
+
+int main(int argc, char* argv[]){   
+  //char word[]= "test";
+  //Create a file of 3 words
+  struct mot* mot1 = create_new_mot(&Pool_mot,"Word1",NULL);
+  struct mot* mot2 = create_new_mot(&Pool_mot,"Word2",NULL);
+  struct mot* mot3 = create_new_mot(&Pool_mot,"Word3",NULL);
+  struct file file = {NULL,NULL};
+  ajout_file(mot1,&file);
+  affich_file(&file);
+  ajout_file(mot2,&file);
+  affich_file(&file);
+  ajout_file(mot3,&file);
+  affich_file(&file);
+  singe_imprimeur(&file);
+  affich_file(&file); 
+  singe_imprimeur(&file); 
+  affich_file(&file); 
+  singe_imprimeur(&file); 
+  affich_file(&file); 
+  return 0;
+}
