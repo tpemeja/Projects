@@ -1,7 +1,7 @@
 # Ant colony simulation and behavior optimization
 Project realized in 2019 with Maxime ROSAY.
 
-[Algo_mob_2019.pdf](Algo_mob_2019.pdf) is a French report of this project, describing more precisely the work done and explained below.
+[Algo_mob_2019.pdf](Algo_mob_2019.pdf) is a French report of this project describing more precisely the work done and explained below.
 
 ## Pre-requesties :
 - [JBotSim](https://jbotsim.io/) : simulation library for distributed algorithms in dynamic networks
