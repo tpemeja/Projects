@@ -11,7 +11,7 @@ The complier supports the following actions :
 - **conditionals** (```if```, ```if else```, ```while```)
 - **structures** (declaration, assignment) (see comments)
 - **return** (no control over the output of the function)
-- **function** (cf commentaires)
+- **function** (see comments)
 
 ## Compile .myc file
 
