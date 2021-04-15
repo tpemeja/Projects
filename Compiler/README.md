@@ -38,7 +38,7 @@ make
 
 ```./lang``` opens the ```.myc``` code interpreter.
 
-For more clarity, we have written some auxiliary functions that are mostly found in ```display.c```.
+For more clarity, we have written some auxiliary functions that are mainly located in ```display.c```.
 
 ## Comments:
 - Having misunderstood how the compiler should handle structures, i.e. for example ```return char var[8]``` for ```struct var{int x, int y}```
@@ -49,7 +49,7 @@ For more clarity, we have written some auxiliary functions that are mostly found
   
     ```variable->attribute = sth```
     
-  But the rule generates warnings, 13 shift/reduce conflicts, which we do not know how to solve.
+  But the rule generates warnings ```13 shift/reduce conflicts``` which we do not know how to solve.
   The code compiles and works with it now, so it doesn't seem to be a problem, but we specify it anyway.
 
 - The assignment of the fields of a structure must strictly respect the equality of types (this is only for the structure, the explicit cast is implemented for the rest)
