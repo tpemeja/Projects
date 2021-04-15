@@ -1,1 +1,0 @@
-void singe_imprimeur(struct file* file, int* nb_mot_impr);
