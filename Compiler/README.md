@@ -9,7 +9,7 @@ The complier supports the following actions :
 - **operators** (```+```,```-```,```*```) but not between pointers
 - **assignments** (```int```,```float```,```struct```)
 - **conditionals** (```if```, ```if else```, ```while```)
-- **structures** (declaration, assignment) (well not really, see comments)
+- **structures** (declaration, assignment) (see comments)
 - **return** (no control over the output of the function)
 - **function** (cf commentaires)
 
