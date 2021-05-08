@@ -1,7 +1,7 @@
 # Database with web interface
 Project realized in 2019 with Théo MATRICON, Maxime ROSAY.
 
-[SGBD_2019.pdf](SGBD_2019.pdf) is a French report of this project, describing more precisely the work done and explained below.
+[SGBD_2019.pdf](SGBD_2019.pdf) is a French report of this project describing more precisely the work done and explained below.
 
 ## Project description
 This project concerns the modeling, creation and implementation of a database and includes two main parts: 

@@ -6,6 +6,7 @@ Some of my academic projects :
   - [Gomoku](Gomoku) : Gomoku game implementation and AI players creation for a tournament
   - [P2P file sharing](P2P%20file%20sharing) : Peer-to-peer file sharing systems with tracker
   - [Thread support library](Thread%20support%20library) : Custom thread library
+  - [Shakespearian-Monkeys](Shakespearian-Monkeys) : Random text generator
 
 - **Java projects** :
   - [Mobility algorithm](Mobility%20algorithm) : Simulation of an ant colony and optimization of the ants' behavior
