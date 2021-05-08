@@ -13,7 +13,7 @@ Vous pouvez utiliser cette feuille pour visualiser un match.
 Pour charger vos joueurs, il faut changer leurs noms dans 'classNames' (ligne 13)
 """
 
-import Puissance_4
+import Puissance_4_bitboard
 import importlib
 import time
 from io import StringIO
@@ -26,22 +26,22 @@ from IPython.display import display, HTML, clear_output
 # Define here the players to load
 classNames = ['randomPlayer', 'randomPlayer']
 
-b = Puissance_4.Board()
+b = Puissance_4_bitboard.Board()
 
 players = []
 player1class = importlib.import_module(classNames[0])
 player1 = player1class.myPlayer()
-player1.newGame(Puissance_4.Board._RED)
+player1.newGame(Puissance_4_bitboard.Board._RED)
 players.append(player1)
 
 player2class = importlib.import_module(classNames[1])
 player2 = player2class.myPlayer()
-player2.newGame(Puissance_4.Board._YELLOW)
+player2.newGame(Puissance_4_bitboard.Board._YELLOW)
 players.append(player2)
 
 totalTime = [0,0] # total real time for each player
 nextplayer = 0
-nextplayercolor = Puissance_4.Board._RED
+nextplayercolor = Puissance_4_bitboard.Board._RED
 nbmoves = 1
 
 outputs = ["",""]
@@ -56,15 +56,13 @@ coup = 1
 while not b.is_game_over():
     print("Referee Board")
     clear_output(wait=True)
-    #display(HTML(b.svg()))
-    display(HTML(b.svg2()))
-    #svg2png(bytestring=b.svg(),write_to='output-'+str(coup).zfill(4)+'.png')
+    display(HTML(b.svg()))
     legals = b.legal_moves() # legal moves are given as internal (flat) coordinates, not A1, A2, ...
 
     print("Legal Moves: ", [b.coord_to_name(m) for m in legals]) # I have to use this wrapper if I want to print them
     nbmoves += 1
     otherplayer = (nextplayer + 1) % 2
-    othercolor = Puissance_4.Board.flip(nextplayercolor)
+    othercolor = Puissance_4_bitboard.Board.flip(nextplayercolor)
     
     currentTime = time.time()
     sys.stdout = stringio
@@ -78,12 +76,12 @@ while not b.is_game_over():
     totalTime[nextplayer] += time.time() - currentTime
     print("Player ", nextplayercolor, players[nextplayer].getPlayerName(), "plays: " + str(move)) #changed 
 
-    if not Puissance_4.Board.name_to_coord(move) in legals:
+    if not Puissance_4_bitboard.Board.name_to_coord(move) in legals:
         print(otherplayer, nextplayer, nextplayercolor)
         print("Problem: illegal move")
         wrongmovefrom = nextplayercolor
         break
-    b.push(Puissance_4.Board.name_to_coord(move)) # Here I have to internally flatten the move to be able to check it.
+    b.push(Puissance_4_bitboard.Board.name_to_coord(move)) # Here I have to internally flatten the move to be able to check it.
     players[otherplayer].playOpponentMove(move)
  
     nextplayer = otherplayer
@@ -95,7 +93,7 @@ print("Referee Board:")
 clear_output(wait=True)
 display(HTML(b.svg()))
 print("The game is over")
-b.board_to_text(b._board)
+b.board_to_text()
 result = b.result()
 print("Time:", totalTime)
 print("Winner: ", end="")

@@ -5,26 +5,41 @@ from random import choice
 from playerInterface import *
 
 class myPlayer(PlayerInterface):
+    #Play the move to win first
+    #Or the move to not lose 
+    #And then a random move 
 
-    def __init__(self):
+    def __init__(self, seed = 42):
         self._board = Puissance_4.Board()
         self._mycolor = None
-
+        
     def getPlayerName(self):
         return "Random Player"
 
-    def reset(self): #Specific function for data creation
+    def reset(self): 
         self.__init__()
 
     def getPlayerMove(self):
-        if self._board.is_game_over():
-            print("Referee told me to play but the game is over!")
-            return "PASS"
+        assert (not self._board.is_game_over())
         moves = self._board.legal_moves()
         if (len(moves) > 1):
-            move = choice(moves)
+            best_move = None
+            for move in moves:
+                self._board.push(move)
+                if(self._board.is_game_over()):
+                    if(self._board._winner == self._mycolor):
+                        return Puissance_4.Board.coord_to_name(move)
+                    else:
+                        best_move = move
+                self._board.pop()
+
+            if(best_move != None):
+                move = best_move
+            else:           
+                move = choice(moves)
         else:
             move = moves[0]
+
         self._board.push(move)
         return Puissance_4.Board.coord_to_name(move)
 

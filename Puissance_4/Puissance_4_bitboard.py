@@ -1,6 +1,13 @@
 '''
 Based on the code of the Goban implementation by Laurent SIMON 
+
+Bitboard :
+[[1 2 3]
+ [4 5 6]       -> 123456789
+ [7 8 9]]
 '''
+
+
 
 import numpy as np
 #RED plays first
@@ -18,14 +25,7 @@ class Board:
 
     @staticmethod
     def flip_board(M):
-        new_M = np.zeros(Board._BOARDSIZE)
-        for i in range(Board._BOARDSIZE[0]):
-            for j in range(Board._BOARDSIZE[1]):
-                if  M[i][j] == Board._RED:
-                    new_M[i][Board._BOARDSIZE[1]-1-j] = Board._RED
-                elif M[i][j] == Board._YELLOW:
-                    new_M[i][Board._BOARDSIZE[1]-1-j] = Board._YELLOW
-        return new_M
+        return [M[1],M[0]]
 
     @staticmethod
     def name_to_coord(coord):
@@ -39,51 +39,20 @@ class Board:
         return letterIndex[coord]
 
     @staticmethod
-    def board_to_text(M):
-        text = ""
-        for i in range(Board._BOARDSIZE[0]):
-            text+="|"
-            for j in range(Board._BOARDSIZE[1]):
-                if(M[i][j]==Board._YELLOW):
-                    text+="O"
-                elif(M[i][j]==Board._RED):
-                    text+="X"
-                else:
-                    text+="."
-                text+="|"
-            text+="\n"
-        return text
-
-    @staticmethod
-    def board_to_numb(M):
-        numb = [0,0]
-        add_numb = 1
-        for i in range(len(M)):
-            for j in range(len(M[0])):
-                if(M[i][j]==Board._RED):
-                    numb[0]+=add_numb
-                elif(M[i][j]==Board._YELLOW):
-                    numb[1]+=add_numb
-
-                add_numb = add_numb<<1
-        return numb
-
-    @staticmethod
-    def numb_to_board(L):
+    def boards_to_matrix(Boards):
         M = np.zeros(Board._BOARDSIZE)
         mask = 1
         for i in range(Board._BOARDSIZE[0]):
             for j in range(Board._BOARDSIZE[1]):
-                if(L[0]&mask==mask):
-                    M[i][j]=Board._RED
-                elif(L[1]&mask==mask):
-                    M[i][j]=Board._YELLOW
-
-                mask=mask<<1
+                if(Boards[Board._RED-1] & mask == mask):
+                    M[i][j] = Board._RED
+                elif(Boards[Board._YELLOW-1] & mask == mask):
+                    M[i][j] = Board._YELLOW
+                mask = mask << 1
         return M
 
     def __init__(self):
-        self._board = np.zeros((Board._BOARDSIZE), dtype='int8')
+        self._board = [0,0] #RED, YELLOW
         self._gameOver = False
         self._turn = 0
         self._winner = self._EMPTY
@@ -94,8 +63,37 @@ class Board:
         ''' Checks if the game is over, ie, if you can still put a stone somewhere'''
         return self._gameOver
 
+    def is_fill(self, val_board, i, j):
+        mask = 1
+        mask = mask << i*self._BOARDSIZE[1] + j
+        return (val_board & mask) == mask
+
+    def fill(self, player, i, j):
+        mask = 1
+        mask = mask << i*self._BOARDSIZE[1] + j
+        self._board[player-1] = self._board[player-1] | mask
+
+    def value(self, i, j):
+        return self.is_fill(self._board[self._RED-1],i,j)*self._RED\
+             + self.is_fill(self._board[self._YELLOW-1],i,j)*self._YELLOW
+
+    def board_to_text(self):
+        text = ""
+        for i in range(Board._BOARDSIZE[0]):
+            text+="|"
+            for j in range(Board._BOARDSIZE[1]):
+                if(self.is_fill(self._board[self._YELLOW-1],i,j)):
+                    text+="O"
+                elif(self.is_fill(self._board[self._RED-1],i,j)):
+                    text+="X"
+                else:
+                    text+="."
+                text+="|"
+            text+="\n"
+        return text
+
     def legal_moves(self):
-        return [i for i in range(self._BOARDSIZE[1]) if(self._board[0][i] == self._EMPTY)]
+        return [k for k in range(self._BOARDSIZE[1]) if(not self.value(0, k))]
 
     def reset(self):
         self.__init__()
@@ -115,7 +113,7 @@ class Board:
             #ligne
             in_a_row = 0
             for k in range(max(0,j-(n-1)),min(self._BOARDSIZE[1],j+n)):
-                if(self._board[i][k] == self._nextPlayer):
+                if(self.value(i,k) == color):
                     in_a_row += 1
                     if(in_a_row >= n):
                         return True
@@ -127,7 +125,7 @@ class Board:
             #colonne
             in_a_row = 0
             for k in range(max(0,i-(n-1)),min(self._BOARDSIZE[0],i+n)):
-                if(self._board[k][j] == self._nextPlayer):
+                if(self.value(k,j) == color):
                     in_a_row += 1
                     if(in_a_row >= n):
                         return True
@@ -140,7 +138,7 @@ class Board:
             in_a_row = 0
             for k in range(-(n-1),n):
                 if((i+k>=0 and i+k<self._BOARDSIZE[0]) and (j+k>=0 and j+k<self._BOARDSIZE[1])):
-                    if(self._board[i+k][j+k] == self._nextPlayer):
+                    if(self.value(i+k,j+k) == color):
                         in_a_row += 1
                         if(in_a_row >= n):
                             return True
@@ -153,22 +151,23 @@ class Board:
             in_a_row = 0
             for k in range(-(n-1),n):
                 if((i+k>=0 and i+k<self._BOARDSIZE[0]) and (j-k>=0 and j-k<self._BOARDSIZE[1])):
-                    if(self._board[i+k][j-k] == self._nextPlayer):
+                    if(self.value(i+k,j-k) == color):
                         in_a_row += 1
                         if(in_a_row >= n):
                             return True
                     else :
                         in_a_row = 0
             if(in_a_row >= n):
+                self.set_winner()
                 return True
-                
+            
         return False
 
     def play_move(self, m):
         i = 0
-        while(i<=self._BOARDSIZE[0]-2 and self._board[i+1][m] == self._EMPTY):
+        while(i<=self._BOARDSIZE[0]-2 and self.value(i+1,m) == self._EMPTY):
             i+=1
-        self._board[i][m] = self._nextPlayer
+        self.fill(self._nextPlayer, i, m)
         self._turn += 1
         if(self._turn >= self._BOARDSIZE[0]*self._BOARDSIZE[1]):
             self._gameOver = True
@@ -179,25 +178,17 @@ class Board:
 
     def push(self, m):
         assert not self._gameOver
-        old = np.copy(self._board)
-        self._oldboard.append(old)
+        self._oldboard.append(self._board.copy())
         return self.play_move(m)
 
     def pop(self):
-        assert not  (self._turn==0)
+        assert not (self._turn==0)
         self._board = self._oldboard[-1]
         self._turn -= 1
         self._oldboard = self._oldboard[:-1]
         self._gameOver = False
         self._winner = self._EMPTY
         self._nextPlayer = Board.flip(self._nextPlayer)
-
-    def text_to_board(self,text):
-        board = np.zeros((Board._BOARDSIZE), dtype='int8')
-        for i in range(self._BOARDSIZE[0]):
-            for j in range(self._BOARDSIZE[1]):
-                board[i][j]=text[i*(2*self._BOARDSIZE[1]+2)+2*j+1]
-        return board
 
     def result(self):
         if self._winner == Board._YELLOW:
@@ -206,7 +197,6 @@ class Board:
             return "1-0"
         else:
             return "1/2-1/2"
-
 
     def svg(self):
 
@@ -252,8 +242,8 @@ class Board:
                 "WHITE" +'" />'
 
         # The stones
-        pieces = [(x,self._BOARDSIZE[0]-y,self._board[y,x]) for x in range(self._BOARDSIZE[1]) for y in range(self._BOARDSIZE[0]) if
-                self._board[y,x] != Board._EMPTY]
+        pieces = [(x,self._BOARDSIZE[0]-y,self.value(y,x)) for x in range(self._BOARDSIZE[1]) for y in range(self._BOARDSIZE[0]) if
+                self.value(y,x) != Board._EMPTY]
         for (x,y,c) in pieces:
             board += '<circle cx="'+str(border+width*x) + \
                 '" cy="'+str(border+width*(nb_cells_width-y-1))+'" r="' + str(circle_width) + \
