@@ -13,4 +13,5 @@ The training of the network required too much information and was too time consu
 - [x] Implement the genetic algorithm
 - [ ] Optimize the parameters using [Optuna](https://optuna.org/) 
 
+####  In the future, we can imagine using Reinforcement Learning to create a player.
 [Connect Four](https://en.wikipedia.org/wiki/Connect_Four) is a **solved game**. It might be interesting to know if the player, based on a neural network trained with all possible games, will follow the strategy and force the victory.
